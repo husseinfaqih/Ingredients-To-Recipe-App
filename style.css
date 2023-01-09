@@ -1,0 +1,93 @@
+body {
+  font-family: 'Playfair Display', serif;
+}
+
+#mainDiv {
+  display: grid;
+  grid-template-columns: repeat(3, 15rem);
+  gap: 1rem;
+  justify-content: center;
+}
+
+#newDiv {
+  border: 1px solid black;
+  width: 15rem;
+  padding-bottom: 2rem;
+  margin: 0 0.5rem;
+  text-align: center;
+}
+
+#infoDiv {
+  width: 15rem;
+}
+/* PART I */
+#countingDiv {
+  display: flex;
+  justify-content: center;
+}
+#searchField {
+  width: 80vw;
+}
+#displayCountRecipes {
+  position: relative;
+  font-size: 200px;
+  margin: 0;
+  color: #fed215;
+}
+#displayCountText {
+  font-weight: 500;
+  width: 5rem;
+  /* padding: 20px;*/
+  padding-top: 3.7rem;
+  position: relative;
+  right: 9rem;
+  font-size: large;
+}
+/* PART II */
+#displayTitle {
+  font-weight: 800;
+  font-size: large;
+  margin: 0;
+  padding: 0 1rem;
+}
+#displayCuisine {
+  margin: 0;
+  font-style: italic;
+}
+#displayCountMissingIngredients {
+  margin: 0;
+  font-size: xx-large;
+  font-weight: 800;
+  color: #fed215;
+}
+#displayTitleMissingIngredients {
+  margin: 0;
+  font-weight: 600;
+}
+#displayMissingIngredients {
+  margin: 0;
+  margin-bottom: 1rem;
+  font-style: italic;
+  padding: 0 1rem;
+}
+
+#displayTitleMyIngredients {
+  margin: 0;
+  font-weight: 600;
+}
+#displayMyIngredients {
+  margin: 0;
+  font-style: italic;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+}
+#displayRecipeUrl {
+  color: black;
+  background-color: #fed215;
+  text-decoration: none;
+  padding: 0.5rem;
+}
+
+#displayRecipeUrl:hover {
+  color: white;
+}
