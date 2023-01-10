@@ -95,6 +95,9 @@ function displayRecipe(
   //Create new Div box
   const newDiv = document.createElement('div');
   newDiv.id = 'newDiv';
+  newDiv.className = 'col-lg-4';
+  // newDiv.className = 'col';
+  // .col-	.col-sm-	.col-md-	.col-lg-	.col-xl-
 
   //Create image Div
   const imgDiv = document.createElement('div');
@@ -102,6 +105,7 @@ function displayRecipe(
   // create text Div
   const infoDiv = document.createElement('div');
   infoDiv.id = 'infoDiv';
+  infoDiv.className = 'card-body';
   //>>
   mainDiv.appendChild(newDiv);
   newDiv.appendChild(imgDiv);
@@ -111,17 +115,21 @@ function displayRecipe(
   //IMAGE OF RECIPE
   const displayImage = document.createElement('img');
   displayImage.src = image;
+  displayImage.className = 'card-img-top';
+
   imgDiv.appendChild(displayImage);
 
   //TITLE OF RECIPE
-  const displayTitle = document.createElement('p');
+  const displayTitle = document.createElement('h5');
   displayTitle.textContent = title;
   displayTitle.id = 'displayTitle';
+  displayTitle.className = 'card-title';
   infoDiv.appendChild(displayTitle);
   //Cuisine
-  const displayCuisine = document.createElement('p');
+  const displayCuisine = document.createElement('h6');
   displayCuisine.textContent = ` - ${cuisine} - `;
   displayCuisine.id = 'displayCuisine';
+  displayCuisine.className = 'card-title';
   infoDiv.appendChild(displayCuisine);
   //MISSING INGREDIENT LIST
   // >>Count Missing INGREDIENTS
@@ -140,6 +148,7 @@ function displayRecipe(
   const missingIngredientsString = missingIngredients.join(', ');
   displayMissingIngredients.textContent = missingIngredientsString;
   displayMissingIngredients.id = 'displayMissingIngredients';
+  displayMissingIngredients.className = 'card-text';
   infoDiv.appendChild(displayMissingIngredients);
 
   //>>
@@ -163,6 +172,7 @@ function displayRecipe(
   displayRecipeUrl.href = recipeUrl;
   displayRecipeUrl.target = '_blank';
   displayRecipeUrl.id = 'displayRecipeUrl';
+  displayRecipeUrl.className = 'btn btn-primary';
   infoDiv.appendChild(displayRecipeUrl);
   //Recipe Url
 
