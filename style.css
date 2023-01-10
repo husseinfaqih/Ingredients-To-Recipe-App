@@ -1,7 +1,37 @@
-body {
+#full-page {
   font-family: 'Playfair Display', serif;
 }
-
 #search-section {
   background-color: aqua;
+}
+#displayTitle {
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin: 0;
+}
+#displayCuisine {
+  /* font-weight: 600; */
+  font-size: 1rem;
+  font-style: italic;
+  margin: 0;
+}
+#displayCountMissingIngredients {
+  color: #f0ad4e;
+  font-size: 4rem;
+  font-weight: 600;
+  margin: -10px 0;
+}
+#displayTitleMissingIngredients {
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 0;
+}
+#displayTitleMyIngredients {
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 0;
+}
+.card-text {
+  font-style: italic;
+  margin: 0;
 }

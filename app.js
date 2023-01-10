@@ -105,7 +105,7 @@ function displayRecipe(
   // create text Div
   const infoDiv = document.createElement('div');
   infoDiv.id = 'infoDiv';
-  infoDiv.className = 'card-body';
+  infoDiv.className = 'card mb-3 card-body text-center';
   //>>
   mainDiv.appendChild(newDiv);
   newDiv.appendChild(imgDiv);
@@ -129,7 +129,7 @@ function displayRecipe(
   const displayCuisine = document.createElement('h6');
   displayCuisine.textContent = ` - ${cuisine} - `;
   displayCuisine.id = 'displayCuisine';
-  displayCuisine.className = 'card-title';
+  displayCuisine.className = 'card-title ';
   infoDiv.appendChild(displayCuisine);
   //MISSING INGREDIENT LIST
   // >>Count Missing INGREDIENTS
@@ -172,7 +172,7 @@ function displayRecipe(
   displayRecipeUrl.href = recipeUrl;
   displayRecipeUrl.target = '_blank';
   displayRecipeUrl.id = 'displayRecipeUrl';
-  displayRecipeUrl.className = 'btn btn-primary';
+  displayRecipeUrl.className = 'btn btn-warning';
   infoDiv.appendChild(displayRecipeUrl);
   //Recipe Url
 
