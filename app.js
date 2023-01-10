@@ -2,7 +2,6 @@ async function fetchAndSearch(inputIngredients) {
   const url = `https://api.edamam.com/search?q=${inputIngredients}&app_id=2b53a6a1&app_key=8bd43ae7fb696339c4862e063239f341`;
   const response = await fetch(url);
   const jsonData = await response.json();
-  console.log(jsonData);
   return extractRecipeData(jsonData, inputIngredients);
 }
 
@@ -14,11 +13,7 @@ function extractRecipeData(jsonData, inputIngredients) {
     const outputIngredientList = result.recipe.ingredients.map((ingredient) => {
       return ingredient.food;
     });
-    const detailedIngredientList = result.recipe.ingredientLines.map(
-      (ingredient) => {
-        return ingredient;
-      },
-    );
+
     let keyIngredients = outputIngredientList.filter((output) =>
       inputIngredientsArray.find((input) => {
         return output.includes(input);
@@ -39,9 +34,7 @@ function extractRecipeData(jsonData, inputIngredients) {
 
     displayRecipe(
       image,
-      index,
       title,
-      detailedIngredientList,
       keyIngredients,
       missingIngredients,
       cuisine,
@@ -53,9 +46,8 @@ function extractRecipeData(jsonData, inputIngredients) {
 function displayCountingRecipes(countRecipes) {
   const mainDiv = document.getElementById('mainDiv');
   mainDiv.innerHTML = '';
-  //Create Counting Div box
   const countingDiv = document.getElementById('countingDiv');
-  //Count Recipes
+
   countingDiv.innerHTML = '';
 
   if (countRecipes >= 10) {
@@ -67,83 +59,71 @@ function displayCountingRecipes(countRecipes) {
     const displayCountRecipes = document.createElement('p');
     displayCountRecipes.textContent = `0${countRecipes}`;
     displayCountRecipes.id = 'displayCountRecipes';
+    displayCountRecipes.className = 'align-self-center';
     countingDiv.appendChild(displayCountRecipes);
   }
 
-  // text
   const displayCountText = document.createElement('p');
   const string = 'recipes\nbased\non your\ningredients';
-  console.log(string);
   displayCountText.textContent = string;
   displayCountText.id = 'displayCountText';
+  displayCountText.className = 'text-break  align-self-center ';
   countingDiv.appendChild(displayCountText);
 }
 
 function displayRecipe(
   image,
-  index,
   title,
-  detailedIngredientList,
   myIngredients,
   missingIngredients,
   cuisine,
   recipeUrl,
 ) {
-  //Create main Recipe DIV
   const mainDiv = document.getElementById('mainDiv');
 
-  //Create new Div box
   const newDiv = document.createElement('div');
   newDiv.id = 'newDiv';
   newDiv.className = 'col-lg-4';
-  // newDiv.className = 'col';
-  // .col-	.col-sm-	.col-md-	.col-lg-	.col-xl-
 
-  //Create image Div
   const imgDiv = document.createElement('div');
   imgDiv.id = 'imgDiv';
-  // create text Div
+
   const infoDiv = document.createElement('div');
   infoDiv.id = 'infoDiv';
-  infoDiv.className = 'card mb-3 card-body text-center';
-  //>>
+  infoDiv.className = ' mb-3 card-body text-center bg-white';
+
   mainDiv.appendChild(newDiv);
   newDiv.appendChild(imgDiv);
   newDiv.appendChild(infoDiv);
-  //>>>
 
-  //IMAGE OF RECIPE
   const displayImage = document.createElement('img');
   displayImage.src = image;
   displayImage.className = 'card-img-top';
 
   imgDiv.appendChild(displayImage);
 
-  //TITLE OF RECIPE
   const displayTitle = document.createElement('h5');
   displayTitle.textContent = title;
   displayTitle.id = 'displayTitle';
   displayTitle.className = 'card-title';
   infoDiv.appendChild(displayTitle);
-  //Cuisine
+
   const displayCuisine = document.createElement('h6');
   displayCuisine.textContent = ` - ${cuisine} - `;
   displayCuisine.id = 'displayCuisine';
   displayCuisine.className = 'card-title ';
   infoDiv.appendChild(displayCuisine);
-  //MISSING INGREDIENT LIST
-  // >>Count Missing INGREDIENTS
+
   const displayCountMissingIngredients = document.createElement('p');
   displayCountMissingIngredients.textContent = missingIngredients.length;
   displayCountMissingIngredients.id = 'displayCountMissingIngredients';
   infoDiv.appendChild(displayCountMissingIngredients);
-  //>>
-  // >>Count Missing INGREDIENTS
+
   const displayTitleMissingIngredients = document.createElement('p');
   displayTitleMissingIngredients.textContent = `Missing ingredients:`;
   displayTitleMissingIngredients.id = 'displayTitleMissingIngredients';
   infoDiv.appendChild(displayTitleMissingIngredients);
-  //>>
+
   const displayMissingIngredients = document.createElement('p');
   const missingIngredientsString = missingIngredients.join(', ');
   displayMissingIngredients.textContent = missingIngredientsString;
@@ -151,21 +131,17 @@ function displayRecipe(
   displayMissingIngredients.className = 'card-text';
   infoDiv.appendChild(displayMissingIngredients);
 
-  //>>
-  //>>
-  //MY INGREDIENT LIST
   const displayTitleMyIngredients = document.createElement('p');
   displayTitleMyIngredients.textContent = `My ingredients:`;
   displayTitleMyIngredients.id = 'displayTitleMyIngredients';
   infoDiv.appendChild(displayTitleMyIngredients);
-  //
+
   const displayMyIngredients = document.createElement('p');
   const myIngredientsString = myIngredients.join(', ');
   displayMyIngredients.textContent = myIngredientsString;
   displayMyIngredients.id = 'displayMyIngredients';
   infoDiv.appendChild(displayMyIngredients);
 
-  //Recipe Url
   const displayRecipeUrl = document.createElement('a');
   var link = document.createTextNode('Check the full Recipe here!');
   displayRecipeUrl.appendChild(link);
@@ -174,12 +150,6 @@ function displayRecipe(
   displayRecipeUrl.id = 'displayRecipeUrl';
   displayRecipeUrl.className = 'btn btn-warning';
   infoDiv.appendChild(displayRecipeUrl);
-  //Recipe Url
-
-  //INGREDIENT LIST
-  // const displayDetailedIngredientList = document.createElement('p');
-  // displayDetailedIngredientList.textContent = `Ingredients: ${detailedIngredientList}`;
-  // infoDiv.appendChild(displayDetailedIngredientList);
 }
 
 window.onload = () => {

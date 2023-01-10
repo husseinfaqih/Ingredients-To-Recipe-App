@@ -1,8 +1,19 @@
 #full-page {
   font-family: 'Playfair Display', serif;
 }
-#search-section {
-  background-color: aqua;
+
+#displayCountRecipes {
+  position: relative;
+  color: #f0ad4e;
+  font-weight: 600;
+  font-size: 6.2rem;
+  margin: 0 20px 0 0;
+  bottom: 1rem;
+}
+#displayCountText {
+  font-size: 1.2rem;
+  font-style: italic;
+  width: 7rem;
 }
 #displayTitle {
   font-weight: 600;
@@ -10,7 +21,6 @@
   margin: 0;
 }
 #displayCuisine {
-  /* font-weight: 600; */
   font-size: 1rem;
   font-style: italic;
   margin: 0;
