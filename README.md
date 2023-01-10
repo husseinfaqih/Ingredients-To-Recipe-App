@@ -1,6 +1,6 @@
 # ingredientsToRecipe-App
 :rice: :egg: :tomato: :lemon: :eggplant:
-You have some ingredients in your fridge but don't know what to make with them?
+*You have some ingredients in your fridge but don't know what to make with them?*
 
 **IngredientsToRecipe** is a recipe search engine that allows users to search for recipes by inputting one or multiple ingredients. I used the Edamam Recipe Api https://www.edamam.com/
 
