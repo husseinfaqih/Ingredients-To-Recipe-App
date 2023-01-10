@@ -9,7 +9,7 @@ function extractRecipeData(jsonData, inputIngredients) {
   const inputIngredientsArray = inputIngredients.split(' ');
   const countRecipes = jsonData.count;
   displayCountingRecipes(countRecipes);
-  jsonData.hits.map((result, index) => {
+  jsonData.hits.map((result) => {
     const outputIngredientList = result.recipe.ingredients.map((ingredient) => {
       return ingredient.food;
     });
@@ -160,8 +160,8 @@ window.onload = () => {
 
   function searchRecipe() {
     fetchAndSearch(searchField.value).catch((error) => {
-      document.getElementById('errorMessage').textContent = error;
       console.log(error);
+      document.getElementById('errorMessage').textContent = error;
     });
   }
 };
