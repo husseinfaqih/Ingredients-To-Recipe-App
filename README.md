@@ -1,2 +1,10 @@
-# ingredientsToRecipeApp
-This is a homework assignment for my HYF studies in which I am attempting to build my first single page application using an API. I developed a recipe search engine that allows users to search for recipes by inputting ingredients. I used the Edamam Recipe Api https://www.edamam.com/
+# ingredientsToRecipe-App
+:rice: :egg: :tomato: :lemon:
+You have some ingredients in your fridge but don't know what to make with them?
+ingredientsToRecipe is a recipe search engine that allows users to search for recipes by inputting one or multiple ingredients. I used the Edamam Recipe Api https://www.edamam.com/
+
+:rocket: The App is deployed on:
+https://luminous-chaja-0c1a16.netlify.app
+
+ **Upcomming Features:** 
+- Filtering results by  **Health Label** : *Vegan, Vegetarian, Dairy-free, Gluten-free..*
