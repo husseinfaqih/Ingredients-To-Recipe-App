@@ -1,4 +1,4 @@
-# ingredientsToRecipe-App
+# ingredientsToRecipe App
 :rice: :egg: :tomato: :lemon: :eggplant:
 *You have some ingredients in your fridge but don't know what to make with them?*
 
