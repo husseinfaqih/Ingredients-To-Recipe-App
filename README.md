@@ -1,4 +1,4 @@
-# ingredientsToRecipe App
+# Ingredients-To-Recipe-App
 
 ![alt text](ingredient.png)
 
